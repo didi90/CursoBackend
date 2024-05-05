@@ -1,0 +1,23 @@
+@startuml
+class usuario{
+-identificador:String
+-TipoDeUsuario: Enum
+}
+
+interface ServicioDescargaSpotify{
++descargarCancion(): String
+}
+
+class Descarga {
++descargarCancion(): String
+}
+
+class ProxyDescarga {
++verificarUsuario(Usuario): String
++descargarCancion(): String
+}
+
+ServicioDescargaSpotify <.l. usuario
+ProxyDescarga -u-|>ServicioDescargaSpotify
+Descarga -u-|>ServicioDescargaSpotify
+@enduml

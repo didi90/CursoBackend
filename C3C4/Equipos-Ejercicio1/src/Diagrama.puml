@@ -1,0 +1,34 @@
+@startuml
+
+class Articulo{
+-nombre: String
+-lote: int
+-peso: int
+-envasado: String
+}
+
+abstract class ControlDeCalidad{
++{abstract}controlDeCalidad(articulo): String
+}
+
+class ControlDeCalidadLote{
++controlDeCalidad(articulo): String
+}
+
+class ControlDeCalidadPeso{
++controlDeCalidad(articulo): String
+}
+
+class ControlDeCalidadEnvasado{
++controlDeCalidad(articulo): String
+}
+
+ControlDeCalidad <-- ControlDeCalidadLote
+ControlDeCalidad <-- ControlDeCalidadPeso
+ControlDeCalidad <-- ControlDeCalidadEnvasado
+
+class AnalistaDeCalidad {
+
+}
+
+@enduml
