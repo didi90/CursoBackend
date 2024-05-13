@@ -1,0 +1,19 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+class Computadora {
+
+-tipo:String
+-ran:int
+-discoRigido:int
+-{static} contador:int
+}
+ComputadoraFactory -l-> Computadora
+class ComputadoraFactory{
+-poolComputadoras: HashMap
++obtenerComputadora(tipo): Computadora
+
+}
+
+
+@enduml

@@ -1,0 +1,31 @@
+[2024-05-09 21:49:57] [ INFO ] [Main:29] Animal: 1 - PERRO - ODIN
+[2024-05-09 21:49:57] [ INFO ] [Main:29] Animal: 2 - GATO - ÑAÑA
+[2024-05-09 21:49:57] [ INFO ] [Main:29] Animal: 3 - PEZ - JULIA
+[2024-05-09 21:49:57] [ INFO ] [Main:29] Animal: 4 - PEZ - DORIS
+[2024-05-09 21:49:57] [ INFO ] [Main:29] Animal: 5 - SAPO - PEPE
+[2024-05-09 21:49:57] [ INFO ] [Main:36] ------------------------------------------------------------
+[2024-05-09 21:49:57] [ INFO ] [Main:39] Animal: 1 - PERRO - ODIN
+[2024-05-09 21:49:57] [ INFO ] [Main:39] Animal: 2 - GATO - ÑAÑA
+[2024-05-09 21:49:57] [ INFO ] [Main:39] Animal: 3 - PEZ - JULIA
+[2024-05-09 21:49:57] [ INFO ] [Main:39] Animal: 4 - PEZ - DORIS
+[2024-05-09 21:59:22] [ INFO ] [Main:29] Figura: 1 - CIRCULO - ROJO
+[2024-05-09 22:02:00] [ INFO ] [Main:30] Figura: 1 - CIRCULO - ROJO
+[2024-05-09 22:02:00] [ INFO ] [Main:36] Figura: 1 - CIRCULO - ROJO
+[2024-05-09 22:02:00] [ INFO ] [Main:36] Figura: 2 - CIRCULO - AMARILLO
+[2024-05-09 22:02:00] [ INFO ] [Main:36] Figura: 3 - CUADRADO - AZUL
+[2024-05-09 22:02:00] [ INFO ] [Main:36] Figura: 4 - CUADRADO - ROJO
+[2024-05-09 22:02:00] [ INFO ] [Main:36] Figura: 5 - CUADRADO - VERDE
+[2024-05-09 22:02:39] [ INFO ] [Main:30] Figura: 1 - CIRCULO - ROJO
+[2024-05-09 22:02:39] [ INFO ] [Main:34] ------------------------------------------------------------
+[2024-05-09 22:02:39] [ INFO ] [Main:38] Figura: 1 - CIRCULO - ROJO
+[2024-05-09 22:02:39] [ INFO ] [Main:38] Figura: 2 - CIRCULO - AMARILLO
+[2024-05-09 22:02:39] [ INFO ] [Main:38] Figura: 3 - CUADRADO - AZUL
+[2024-05-09 22:02:39] [ INFO ] [Main:38] Figura: 4 - CUADRADO - ROJO
+[2024-05-09 22:02:39] [ INFO ] [Main:38] Figura: 5 - CUADRADO - VERDE
+[2024-05-09 22:16:19] [ INFO ] [Main:30] Figura: 1 - CIRCULO - ROJO
+[2024-05-09 22:16:19] [ INFO ] [Main:34] ------------------------------------------------------------
+[2024-05-09 22:16:19] [ INFO ] [Main:38] Figura: 1 - CIRCULO - ROJO
+[2024-05-09 22:16:19] [ INFO ] [Main:38] Figura: 2 - CIRCULO - AMARILLO
+[2024-05-09 22:16:19] [ INFO ] [Main:38] Figura: 3 - CUADRADO - AZUL
+[2024-05-09 22:16:19] [ INFO ] [Main:38] Figura: 4 - CUADRADO - ROJO
+[2024-05-09 22:16:19] [ INFO ] [Main:38] Figura: 5 - CUADRADO - VERDE

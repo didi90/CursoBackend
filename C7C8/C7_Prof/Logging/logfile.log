@@ -1,0 +1,11 @@
+[2024-05-09 20:01:29] [ ERROR] [ListaNumeros:38] La lista no puede tener cero elementos
+[2024-05-09 20:01:29] [ INFO ] [ListaNumeros:14] La lista tiene más de 5 elementos
+[2024-05-09 20:01:29] [ INFO ] [ListaNumeros:14] La lista tiene más de 5 elementos
+[2024-05-09 20:03:25] [ ERROR] [ListaNumeros:38] La lista no puede tener cero elementos
+[2024-05-09 20:03:25] [ INFO ] [ListaNumeros:41] el promedio es: +0.0
+[2024-05-09 20:03:25] [ INFO ] [ListaNumeros:14] La lista tiene más de 5 elementos
+[2024-05-09 20:03:25] [ INFO ] [ListaNumeros:14] La lista tiene más de 5 elementos
+[2024-05-09 20:03:25] [ INFO ] [ListaNumeros:41] el promedio es: +6.428571428571429
+[2024-05-09 20:03:54] [ INFO ] [ListaNumeros:14] La lista tiene más de 5 elementos
+[2024-05-09 20:03:54] [ INFO ] [ListaNumeros:14] La lista tiene más de 5 elementos
+[2024-05-09 20:03:54] [ INFO ] [ListaNumeros:41] el promedio es: +6.428571428571429
