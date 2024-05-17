@@ -1,0 +1,10 @@
+[2024-05-16 21:20:30] [ ERROR] [PacienteServiceTest:31] Error de Sintaxis en sentencia SQL "DROP [*]IF EXISTS DOMICILIOS"; se esperaba "TABLE, INDEX, USER, SEQUENCE, CONSTANT, TRIGGER, MATERIALIZED, VIEW, ROLE, ALIAS, SCHEMA, ALL OBJECTS, DOMAIN, TYPE, AGGREGATE, SYNONYM"
+Syntax error in SQL statement "DROP [*]IF EXISTS DOMICILIOS"; expected "TABLE, INDEX, USER, SEQUENCE, CONSTANT, TRIGGER, MATERIALIZED, VIEW, ROLE, ALIAS, SCHEMA, ALL OBJECTS, DOMAIN, TYPE, AGGREGATE, SYNONYM"; SQL statement:
+DROP IF EXISTS DOMICILIOS [42001-224]
+[2024-05-16 21:21:45] [ ERROR] [PacienteServiceTest:31] Error de Sintaxis en sentencia SQL "\000d\000a\000d\000aDROP [*]IF EXISTS PACIENTES"; se esperaba "TABLE, INDEX, USER, SEQUENCE, CONSTANT, TRIGGER, MATERIALIZED, VIEW, ROLE, ALIAS, SCHEMA, ALL OBJECTS, DOMAIN, TYPE, AGGREGATE, SYNONYM"
+Syntax error in SQL statement "\000d\000a\000d\000aDROP [*]IF EXISTS PACIENTES"; expected "TABLE, INDEX, USER, SEQUENCE, CONSTANT, TRIGGER, MATERIALIZED, VIEW, ROLE, ALIAS, SCHEMA, ALL OBJECTS, DOMAIN, TYPE, AGGREGATE, SYNONYM"; SQL statement:
+
+
+DROP IF EXISTS PACIENTES [42001-224]
+[2024-05-16 21:22:20] [ INFO ] [DomicilioDaoH2:42] Domicilio persistido: Domicilioid=2, calle='Calle Falsa', numero=456, localidad='Springfield', provincia='Montana
+[2024-05-16 21:22:20] [ INFO ] [PacienteDaoH2:47] paciente guardado Pacienteid=2, apellido='Cosme', nombre='Fulanito', dni='123456', fechaIngreso=2024-02-15, domicilio=Domicilioid=2, calle='Calle Falsa', numero=456, localidad='Springfield', provincia='Montana
