@@ -1,0 +1,126 @@
+[2024-05-20 18:52:55] [ ERROR] [AvionServiceTest:33] IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"
+IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"; SQL statement:
+RUNSCRIPT FROM 'create.sql' [90031-224]
+[2024-05-20 18:53:47] [ ERROR] [AvionServiceTest:33] Tipo de dato desconocido : "INTO"
+Unknown data type: "INTO"; SQL statement:
+
+CREATE TABLE AVIONES(
+ID INT AUTO_INCREMENT PRIMARY KEY,
+MARCA VARCHAR(50) NOT NULL,
+MODELO VARCHAR(50) NOT NULL,
+MATRICULA VARCHAR(50) NOT NULL,
+FECHAINGRESO DATE NOT NULL,
+
+INSERT INTO AVIONES
+VALUES (DEFAULT, 'AIRBUS', 'A220', 'ABC123', 2023-11-02) [50004-224]
+[2024-05-20 18:54:27] [ ERROR] [AvionServiceTest:33] Tipo de dato desconocido : "INTO"
+Unknown data type: "INTO"; SQL statement:
+
+CREATE TABLE AVIONES(
+ID INT AUTO_INCREMENT PRIMARY KEY,
+MARCA VARCHAR(50) NOT NULL,
+MODELO VARCHAR(50) NOT NULL,
+MATRICULA VARCHAR(50) NOT NULL,
+FECHAINGRESO DATE NOT NULL,
+
+INSERT INTO AVIONES VALUES (DEFAULT, 'AIRBUS', 'A220', 'ABC123', 2023-11-02) [50004-224]
+[2024-05-20 18:55:29] [ ERROR] [AvionServiceTest:33] Conversión de datos fallida, convirtiendo "2010 (AVIONES: ""FECHAINGRESO"" DATE NOT NULL)"
+Data conversion error converting "2010 (AVIONES: ""FECHAINGRESO"" DATE NOT NULL)"; SQL statement:
+
+
+INSERT INTO AVIONES VALUES (DEFAULT, 'AIRBUS', 'A220', 'ABC123', 2023-11-02) [22018-224]
+[2024-05-20 18:56:58] [ ERROR] [AvionIDaoH2:59] Cannot invoke "dh.backend.model.Avion.getMatricula()" because "avionARetornar" is null
+[2024-05-20 18:58:10] [ INFO ] [AvionIDaoH2:44] Avión persistido: Avionid=2, marca='BOEING', modelo='737', matricula='ABE234', FechaEntradaServicio=2023-10-02
+[2024-05-20 19:00:45] [ INFO ] [AvionIDaoH2:93] El avión encontrado es: null
+[2024-05-20 19:02:00] [ INFO ] [AvionIDaoH2:93] El avión encontrado es: null
+[2024-05-20 19:02:18] [ INFO ] [AvionIDaoH2:93] El avión encontrado es: Avionid=1, marca='AIRBUS', modelo='A220', matricula='ABC123', FechaEntradaServicio=2023-11-02
+[2024-05-20 19:02:35] [ INFO ] [AvionIDaoH2:93] El avión encontrado es: Avionid=1, marca='AIRBUS', modelo='A220', matricula='ABC123', FechaEntradaServicio=2023-11-02
+[2024-05-20 19:02:35] [ INFO ] [AvionIDaoH2:44] Avión persistido: Avionid=2, marca='BOEING', modelo='737', matricula='ABE234', FechaEntradaServicio=2023-10-02
+[2024-05-20 19:02:52] [ INFO ] [AvionIDaoH2:93] El avión encontrado es: null
+[2024-05-20 19:02:52] [ INFO ] [AvionIDaoH2:44] Avión persistido: Avionid=2, marca='BOEING', modelo='737', matricula='ABE234', FechaEntradaServicio=2023-10-02
+[2024-05-20 19:04:40] [ INFO ] [AvionIDaoH2:93] El avión encontrado es: null
+[2024-05-20 19:04:40] [ INFO ] [AvionIDaoH2:44] Avión persistido: Avionid=2, marca='BOEING', modelo='737', matricula='ABE234', FechaEntradaServicio=2023-10-02
+[2024-05-20 19:05:39] [ INFO ] [AvionIDaoH2:93] El avión encontrado es: null
+[2024-05-20 19:05:39] [ INFO ] [AvionIDaoH2:44] Avión persistido: Avionid=2, marca='BOEING', modelo='737', matricula='ABE234', FechaEntradaServicio=2023-10-02
+[2024-05-20 19:09:46] [ INFO ] [AvionIDaoH2:93] El avión encontrado es: null
+[2024-05-20 19:09:46] [ INFO ] [AvionIDaoH2:44] Avión persistido: Avionid=2, marca='BOEING', modelo='737', matricula='ABE234', FechaEntradaServicio=2023-10-02
+[2024-05-20 19:11:37] [ INFO ] [AvionIDaoH2:93] El avión encontrado es: null
+[2024-05-20 19:11:37] [ INFO ] [AvionIDaoH2:44] Avión persistido: Avionid=2, marca='BOEING', modelo='737', matricula='ABE234', FechaEntradaServicio=2023-10-02
+[2024-05-20 19:13:15] [ INFO ] [AvionIDaoH2:44] Avión persistido: Avionid=2, marca='BOEING', modelo='737', matricula='ABE234', FechaEntradaServicio=2023-10-02
+[2024-05-20 19:16:16] [ INFO ] [AvionIDaoH2:93] El avión encontrado es: Avionid=1, marca='AIRBUS', modelo='A220', matricula='ABC123', FechaEntradaServicio=2023-11-02
+[2024-05-20 19:16:16] [ INFO ] [AvionIDaoH2:44] Avión persistido: Avionid=2, marca='BOEING', modelo='737', matricula='ABE234', FechaEntradaServicio=2023-10-02
+[2024-05-20 19:29:09] [ INFO ] [AvionIDaoH2:93] El avión encontrado es: Avionid=1, marca='AIRBUS', modelo='A220', matricula='ABC123', FechaEntradaServicio=2023-11-02
+[2024-05-20 19:29:09] [ INFO ] [AvionIDaoH2:44] Avión persistido: Avionid=3, marca='BOEING', modelo='737', matricula='ABE234', FechaEntradaServicio=2023-10-02
+[2024-05-20 19:29:25] [ INFO ] [AvionIDaoH2:93] El avión encontrado es: Avionid=2, marca='AIRBUS', modelo='A340', matricula='ABC456', FechaEntradaServicio=2021-08-02
+[2024-05-20 19:29:40] [ INFO ] [AvionIDaoH2:93] El avión encontrado es: Avionid=2, marca='AIRBUS', modelo='A340', matricula='ABC456', FechaEntradaServicio=2021-08-02
+[2024-05-20 19:29:40] [ INFO ] [AvionIDaoH2:44] Avión persistido: Avionid=3, marca='BOEING', modelo='737', matricula='ABE234', FechaEntradaServicio=2023-10-02
+[2024-05-20 19:31:03] [ ERROR] [AvionIDaoH2:165] Imposible interpretar la constante "DATE" "ABC123"
+Cannot parse "DATE" constant "ABC123" [22007-224]
+[2024-05-20 19:34:38] [ INFO ] [AvionIDaoH2:161] El avión devuelto es: Avionid=1, marca='AIRBUS', modelo='A220', matricula='ABC123', FechaEntradaServicio=2023-11-02
+[2024-05-20 19:34:38] [ INFO ] [AvionIDaoH2:161] El avión devuelto es: Avionid=2, marca='AIRBUS', modelo='A340', matricula='ABC456', FechaEntradaServicio=2021-08-02
+[2024-05-20 19:38:56] [ ERROR] [AvionIDaoH2:132] Error de Sintaxis en sentencia SQL "DELETE [*]* FROM AVIONES WHERE ID=?"; se esperaba "identifier"
+Syntax error in SQL statement "DELETE [*]* FROM AVIONES WHERE ID=?"; expected "identifier"; SQL statement:
+DELETE * FROM AVIONES WHERE ID=? [42001-224]
+[2024-05-20 19:42:20] [ INFO ] [AvionIDaoH2:161] El avión devuelto es: Avionid=1, marca='AIRBUS', modelo='A220', matricula='ABC123', FechaEntradaServicio=2023-11-02
+[2024-05-20 19:42:20] [ INFO ] [AvionIDaoH2:161] El avión devuelto es: Avionid=2, marca='AIRBUS', modelo='A340', matricula='ABC456', FechaEntradaServicio=2021-08-02
+[2024-05-20 19:43:22] [ ERROR] [AvionIDaoH2:132] Error de Sintaxis en sentencia SQL "DELETE [*]* FROM AVIONES WHERE ID=?"; se esperaba "identifier"
+Syntax error in SQL statement "DELETE [*]* FROM AVIONES WHERE ID=?"; expected "identifier"; SQL statement:
+DELETE * FROM AVIONES WHERE ID=? [42001-224]
+[2024-05-20 19:44:34] [ ERROR] [AvionIDaoH2:96] Valor Invalido "1" para el parametro "columnIndex"
+Invalid value "1" for parameter "columnIndex" [90008-224]
+[2024-05-20 19:46:17] [ INFO ] [AvionIDaoH2:93] El avión encontrado es: Avionid=2, marca='AIRBUS', modelo='A340', matricula='ABC456', FechaEntradaServicio=2021-08-02
+[2024-05-20 19:46:23] [ ERROR] [AvionIDaoH2:132] Metodo permitido unicamente en un query. Use execute ó executeUpdate en lugar de executeQuery
+Method is only allowed for a query. Use execute or executeUpdate instead of executeQuery; SQL statement:
+DELETE FROM AVIONES WHERE ID=? [90002-224]
+[2024-05-20 19:48:09] [ ERROR] [AvionIDaoH2:135] Metodo permitido unicamente en un query. Use execute ó executeUpdate en lugar de executeQuery
+Method is only allowed for a query. Use execute or executeUpdate instead of executeQuery; SQL statement:
+DELETE FROM AVIONES WHERE ID=? [90002-224]
+[2024-05-20 19:49:35] [ ERROR] [AvionIDaoH2:97] Metodo no permitido en un query. Use execute ó executeQuery en lugar de executeUpdate
+Method is not allowed for a query. Use execute or executeQuery instead of executeUpdate; SQL statement:
+SELECT * FROM AVIONES WHERE ID=? [90001-224]
+[2024-05-20 19:49:52] [ ERROR] [AvionIDaoH2:97] Metodo no permitido en un query. Use execute ó executeQuery en lugar de executeUpdate
+Method is not allowed for a query. Use execute or executeQuery instead of executeUpdate; SQL statement:
+SELECT * FROM AVIONES WHERE ID=? [90001-224]
+[2024-05-20 19:50:24] [ INFO ] [AvionIDaoH2:94] El avión encontrado es: Avionid=2, marca='AIRBUS', modelo='A340', matricula='ABC456', FechaEntradaServicio=2021-08-02
+[2024-05-20 19:50:37] [ ERROR] [AvionIDaoH2:138] Metodo permitido unicamente en un query. Use execute ó executeUpdate en lugar de executeQuery
+Method is only allowed for a query. Use execute or executeUpdate instead of executeQuery; SQL statement:
+DELETE FROM AVIONES WHERE ID=? [90002-224]
+[2024-05-20 20:00:12] [ ERROR] [AvionIDaoH2:150] Cannot invoke "dh.backend.model.Avion.getMarca()" because "avion" is null
+[2024-05-20 20:07:18] [ ERROR] [AvionIDaoH2:156] Columna "fechaEntradaServicio" no encontrada
+Column "fechaEntradaServicio" not found [42122-224]
+[2024-05-20 20:08:25] [ ERROR] [AvionIDaoH2:156] Columna "fechaEntradaServicio" no encontrada
+Column "fechaEntradaServicio" not found [42122-224]
+[2024-05-20 20:11:23] [ ERROR] [AvionIDaoH2:156] Columna "FechaEntradaServicio" no encontrada
+Column "FechaEntradaServicio" not found [42122-224]
+[2024-05-20 20:14:59] [ INFO ] [AvionIDaoH2:144] Avión eliminado: Avionid=2, marca='AIRBUS', modelo='A340', matricula='ABC456', fechaEntradaServicio=null
+[2024-05-20 20:24:19] [ INFO ] [AvionIDaoH2:144] Avión eliminado: Avionid=2, marca='AIRBUS', modelo='A340', matricula='ABC456', fechaEntradaServicio=null
+[2024-05-20 20:50:53] [ INFO ] [AvionEnMemoria:21] Avion guardado: Avionid=1, marca='BOEING', modelo='737', matricula='ABE234', fechaEntradaServicio=null
+[2024-05-20 20:51:26] [ INFO ] [AvionEnMemoria:21] Avion guardado: Avionid=1, marca='AIRBUS', modelo='839', matricula='ABE234', fechaEntradaServicio=null
+[2024-05-20 20:51:26] [ INFO ] [AvionEnMemoria:29] Avión encontrado: Avionid=1, marca='AIRBUS', modelo='839', matricula='ABE234', fechaEntradaServicio=null
+[2024-05-20 20:51:45] [ INFO ] [AvionEnMemoria:21] Avion guardado: Avionid=1, marca='BOEING', modelo='737', matricula='ABE234', fechaEntradaServicio=null
+[2024-05-20 20:52:25] [ INFO ] [AvionEnMemoria:21] Avion guardado: Avionid=1, marca='BOEING', modelo='737', matricula='ABE234', fechaEntradaServicio=null
+[2024-05-20 20:53:36] [ INFO ] [AvionEnMemoria:21] Avion guardado: Avionid=1, marca='BOEING', modelo='737', matricula='ABE234', fechaEntradaServicio=null
+[2024-05-20 20:53:36] [ INFO ] [AvionEnMemoria:21] Avion guardado: Avionid=2, marca='AIRBUS', modelo='123', matricula='ABE234', fechaEntradaServicio=null
+[2024-05-20 20:53:36] [ INFO ] [AvionEnMemoria:21] Avion guardado: Avionid=3, marca='BOEING', modelo='888', matricula='ABE234', fechaEntradaServicio=null
+[2024-05-20 20:53:57] [ INFO ] [AvionEnMemoria:21] Avion guardado: Avionid=1, marca='BOEING', modelo='737', matricula='ABE234', fechaEntradaServicio=null
+[2024-05-20 20:53:57] [ INFO ] [AvionEnMemoria:21] Avion guardado: Avionid=2, marca='AIRBUS', modelo='123', matricula='ABE234', fechaEntradaServicio=null
+[2024-05-20 20:53:57] [ INFO ] [AvionEnMemoria:21] Avion guardado: Avionid=3, marca='BOEING', modelo='888', matricula='ABE234', fechaEntradaServicio=null
+[2024-05-20 20:55:39] [ INFO ] [AvionEnMemoria:48] Avión no encontrado
+[2024-05-20 20:55:39] [ INFO ] [AvionEnMemoria:33] Avión no encontrado
+[2024-05-20 20:56:24] [ INFO ] [AvionEnMemoria:48] Avión no encontrado
+[2024-05-20 20:56:24] [ INFO ] [AvionEnMemoria:33] Avión no encontrado
+[2024-05-20 20:57:17] [ INFO ] [AvionEnMemoria:48] Avión no encontrado
+[2024-05-20 20:57:17] [ INFO ] [AvionEnMemoria:48] Avión no encontrado
+[2024-05-20 20:58:19] [ INFO ] [AvionEnMemoria:48] Avión no encontrado
+[2024-05-20 20:58:19] [ INFO ] [AvionEnMemoria:48] Avión no encontrado
+[2024-05-20 20:59:04] [ INFO ] [AvionEnMemoria:48] Avión no encontrado
+[2024-05-20 21:01:54] [ INFO ] [AvionEnMemoria:21] Avion guardado: Avionid=1, marca='AIRBUS', modelo='839', matricula='ABE234', fechaEntradaServicio=null
+[2024-05-20 21:01:54] [ INFO ] [AvionEnMemoria:29] Avión encontrado: Avionid=1, marca='AIRBUS', modelo='839', matricula='ABE234', fechaEntradaServicio=null
+[2024-05-20 21:01:54] [ INFO ] [AvionEnMemoria:44] Avión encontrado y eliminado: Avionid=1, marca='AIRBUS', modelo='839', matricula='ABE234', fechaEntradaServicio=null
+[2024-05-20 21:02:49] [ INFO ] [AvionEnMemoria:21] Avion guardado: Avionid=1, marca='AIRBUS', modelo='839', matricula='ABE234', fechaEntradaServicio=null
+[2024-05-20 21:02:49] [ INFO ] [AvionEnMemoria:44] Avión encontrado y eliminado: Avionid=1, marca='AIRBUS', modelo='839', matricula='ABE234', fechaEntradaServicio=null
+[2024-05-20 21:03:14] [ INFO ] [AvionEnMemoria:48] Avión no encontrado
+[2024-05-20 21:03:52] [ INFO ] [AvionEnMemoria:21] Avion guardado: Avionid=1, marca='BOEING', modelo='737', matricula='ABE234', fechaEntradaServicio=null
+[2024-05-20 21:03:52] [ INFO ] [AvionEnMemoria:21] Avion guardado: Avionid=2, marca='AIRBUS', modelo='123', matricula='ABE234', fechaEntradaServicio=null
+[2024-05-20 21:03:52] [ INFO ] [AvionEnMemoria:21] Avion guardado: Avionid=3, marca='BOEING', modelo='888', matricula='ABE234', fechaEntradaServicio=null
+[2024-05-20 21:03:52] [ INFO ] [AvionEnMemoria:44] Avión encontrado y eliminado: Avionid=2, marca='AIRBUS', modelo='123', matricula='ABE234', fechaEntradaServicio=null

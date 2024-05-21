@@ -1,0 +1,10 @@
+[2024-05-19 17:55:13] [ INFO ] [MedicamentoIDaoH2:36] Medicamento persistido: Medicamentoid=2, codigo=1234, nombre='ASPIRINA', laboratorio='BAGO', cantidad=30, precio=10.0
+[2024-05-19 17:59:48] [ INFO ] [MedicamentoIDaoH2:83] El medicamento enconrado es: Medicamentoid=1, codigo=567, nombre='IBUPROFENO', laboratorio='PFIZER', cantidad=12, precio=3500.0
+[2024-05-19 18:01:09] [ INFO ] [MedicamentoIDaoH2:83] El medicamento enconrado es: null
+[2024-05-19 18:01:30] [ INFO ] [MedicamentoIDaoH2:83] El medicamento enconrado es: null
+[2024-05-19 18:34:43] [ ERROR] [MedicamentoServiceTest:31] Error de Sintaxis en sentencia SQL "\000d\000aVALUES ([*]DEFAULT, 859, 'PARACETAMOL', 'BAYER', 10, 3000)"; se esperaba "INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "\000d\000aVALUES ([*]DEFAULT, 859, 'PARACETAMOL', 'BAYER', 10, 3000)"; expected "INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+
+VALUES (DEFAULT, 859, 'PARACETAMOL', 'BAYER', 10, 3000) [42001-224]
+[2024-05-19 18:35:56] [ INFO ] [MedicamentoIDaoH2:154] El medicamento devuelto es: Medicamentoid=1, codigo=567, nombre='IBUPROFENO', laboratorio='PFIZER', cantidad=12, precio=3500.0
+[2024-05-19 18:35:56] [ INFO ] [MedicamentoIDaoH2:154] El medicamento devuelto es: Medicamentoid=2, codigo=859, nombre='PARACETAMOL', laboratorio='BAYER', cantidad=10, precio=3000.0

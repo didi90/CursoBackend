@@ -1,0 +1,34 @@
+Connection connection = null; 
+try{
+            connection = H2Connection.getConnection();
+            connection.setAutoCommit(false);
+
+
+
+
+
+            connection.commit();
+            connection.setAutoCommit(true);
+
+
+        }catch (Exception e){
+//OPCIONAL CUANDO SE REGISTRAN O CREAN COSAS          
+  if(connection!= null){
+                try{
+                    connection.rollback();
+                }catch (SQLException ex){
+                    LOGGER.error(e.getMessage());
+                }
+            }
+//HASTA AQUÍ
+            LOGGER.error(e.getMessage());
+            e.printStackTrace();
+        }finally {
+           try{
+               connection.close();
+           } catch (SQLException e){
+               LOGGER.error(e.getMessage());
+               e.printStackTrace();
+           }
+        }
+        return null;
