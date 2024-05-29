@@ -124,26 +124,29 @@ public class AvionIDaoH2 implements IDao<Avion> {
             ResultSet resultSet = preparedStatement.executeQuery();
 
             if (resultSet.next()) {
-                String marca = resultSet.getString("marca");
+               /* String marca = resultSet.getString("marca");
                 String modelo = resultSet.getString("modelo");
                 String matricula = resultSet.getString("matricula");
                 LocalDate fechaEntradaServicio = resultSet.getDate("fechaEntradaServicio").toLocalDate();
 
-                avionAEliminar = new Avion(id, marca, modelo, matricula, fechaEntradaServicio);
+                avionAEliminar = new Avion(id, marca, modelo, matricula, fechaEntradaServicio);*/
+
+                // Eliminar el avión
+                String deleteSQL = "DELETE FROM aviones WHERE id = ?";
+                PreparedStatement deleteStatement = connection.prepareStatement(deleteSQL);
+                deleteStatement.setInt(1, id);
+                deleteStatement.executeUpdate();
+
+                LOGGER.info("Avión con id " + id+" fue eliminado");
+
+                connection.commit();
+
             } else {
                 // Si no se encuentra el avión, retorna null
                 return null;
             }
 
-            // Eliminar el avión
-            String deleteSQL = "DELETE FROM aviones WHERE id = ?";
-            PreparedStatement deleteStatement = connection.prepareStatement(deleteSQL);
-            deleteStatement.setInt(1, id);
-            deleteStatement.executeUpdate();
 
-            LOGGER.info("Avión eliminado: " + avionAEliminar);
-
-            connection.commit();
 
         } catch (Exception e) {
             if (connection != null) {
