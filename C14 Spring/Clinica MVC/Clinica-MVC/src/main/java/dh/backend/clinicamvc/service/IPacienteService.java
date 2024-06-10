@@ -10,5 +10,7 @@ public interface IPacienteService{
     Paciente buscarPorId(Integer id);
     List<Paciente> buscarTodos();
 
+    void actualizarPaciente(Paciente paciente);
+    void eliminarPaciente(Integer id);
 
 }
