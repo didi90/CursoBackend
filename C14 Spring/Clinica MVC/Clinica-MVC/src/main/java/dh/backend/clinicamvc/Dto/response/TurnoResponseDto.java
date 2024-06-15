@@ -1,6 +1,5 @@
 package dh.backend.clinicamvc.Dto.response;
 
-import dh.backend.clinicamvc.model.Odontologo;
 import lombok.*;
 
 @Setter

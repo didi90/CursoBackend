@@ -19,20 +19,18 @@ public class TurnoController {
     }
 
     @PostMapping
-    public ResponseEntity<TurnoResponseDto>agregarTurno(@RequestBody TurnoRequestDto turno){
-        TurnoResponseDto turnoADevolver = turnoService.registrarTurno(turno);
+    public ResponseEntity<TurnoResponseDto> agregarTurno(@RequestBody TurnoRequestDto turno){
+        TurnoResponseDto turnoADevolver = turnoService.registrar(turno);
         if(turnoADevolver==null){
-            return  ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
-        }else {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        } else {
             return ResponseEntity.status(HttpStatus.CREATED).body(turnoADevolver);
         }
     }
-
     @GetMapping
     public ResponseEntity<List<TurnoResponseDto>> buscarTodosTurnos(){
-        return  ResponseEntity.ok(turnoService.buscarTodos());
+        return ResponseEntity.ok(turnoService.buscarTodos());
     }
-
     @PutMapping("/{id}")
     public ResponseEntity<String> modificarTurno(@PathVariable Integer id, @RequestBody TurnoRequestDto turno){
         turnoService.actualizarTurno(id, turno);
