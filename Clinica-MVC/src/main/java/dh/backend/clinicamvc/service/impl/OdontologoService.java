@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.function.Supplier;
 import java.util.logging.Logger;
 
 @Service
@@ -21,7 +20,7 @@ public class OdontologoService implements IOdontologoService {
     }
 
     public Odontologo agregarOdontologo(Odontologo odontologo){
-        LOGGER.info("Odontologo Creado: " + odontologo.getNombre() + " " + odontologo.getApellido());
+        LOGGER.info("Odontologo Creado: " + "Id: " + odontologo.getId()+ " Nombre: "+odontologo.getNombre() + " Apellido " + odontologo.getApellido());
         return odontologoRepository.save(odontologo);
 
     }
@@ -61,14 +60,15 @@ public class OdontologoService implements IOdontologoService {
     }
 
    @Override
-    public void eliminarOdontologo(Integer id) throws ResourceNotFoundException {
+    public Optional<Odontologo> eliminarOdontologo(Integer id) throws ResourceNotFoundException {
         Optional<Odontologo> odontologoOptional = buscarUnOdontologo(id);
         if(odontologoOptional.isPresent()) {
             LOGGER.info("Odontologo Eliminado");
             odontologoRepository.deleteById(id);
         }else
             throw new ResourceNotFoundException("{\"mensaje\":\"odontologo no encontrado\"}");
-    }
+       return odontologoOptional;
+   }
 
     @Override
     public List<Odontologo> buscarPorApellido(String apellido) {

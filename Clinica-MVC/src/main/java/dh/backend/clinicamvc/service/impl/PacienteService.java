@@ -22,7 +22,7 @@ public class PacienteService implements IPacienteService {
     }
 
     public Paciente registrarPaciente(Paciente paciente){
-        LOGGER.info("Paciente Creado: " + paciente.getNombre() + " " + paciente.getApellido());
+        LOGGER.info("Paciente Creado: Id: " + paciente.getId() + " Nombre " + paciente.getNombre() + " Apellido " + paciente.getApellido());
         return pacienteRepository.save(paciente);
     }
 
@@ -42,12 +42,13 @@ public class PacienteService implements IPacienteService {
     }
 
     @Override
-    public void eliminarPaciente(Integer id) throws ResourceNotFoundException {
+    public Optional<Paciente> eliminarPaciente(Integer id) throws ResourceNotFoundException {
         Optional<Paciente> pacienteOptional = buscarPorId(id);
         if(pacienteOptional.isPresent()) {
             LOGGER.info("Paciente Actualizado");
             pacienteRepository.deleteById(id);
         }else
             throw new ResourceNotFoundException("{\"mensaje\":\"paciente no encontrado\"}");
+        return pacienteOptional;
     }
 }

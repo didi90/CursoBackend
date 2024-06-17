@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -25,4 +27,5 @@ public class Turno {
     @JsonIgnore
     Odontologo odontologo;
     LocalDate fecha;
+    LocalTime hora;
 }

@@ -14,5 +14,5 @@ public interface IPacienteService {
 
     List<Paciente> buscarTodos();
     void actualizarPaciente(Paciente paciente);
-    void eliminarPaciente(Integer id) throws ResourceNotFoundException;
+    Optional<Paciente> eliminarPaciente(Integer id) throws ResourceNotFoundException;
 }

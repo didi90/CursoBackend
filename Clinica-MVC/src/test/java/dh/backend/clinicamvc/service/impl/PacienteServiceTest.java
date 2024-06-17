@@ -4,6 +4,7 @@ package dh.backend.clinicamvc.service.impl;
 import dh.backend.clinicamvc.entity.Domicilio;
 import dh.backend.clinicamvc.entity.Paciente;
 
+import dh.backend.clinicamvc.exception.ResourceNotFoundException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -71,5 +72,14 @@ class PacienteServiceTest {
 
     }
 
+    @Test
+    @DisplayName("Testear eliminar paciente por id")
+    void testEliminarPacientePorId() throws ResourceNotFoundException {
+
+        Optional<Paciente> pacienteAEliminar = pacienteService.eliminarPaciente(1);
+        Paciente paciente1 = pacienteAEliminar.get();
+        List<Paciente> pacientes2 = pacienteService.buscarTodos();
+        assertTrue(pacientes2.size()!=0);
+    }
 
 }
