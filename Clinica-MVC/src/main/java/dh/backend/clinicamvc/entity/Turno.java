@@ -21,11 +21,11 @@ public class Turno {
 
     Integer id;
 
-    @ManyToOne (cascade = CascadeType.ALL)
+    @ManyToOne
     Paciente paciente;
-    @ManyToOne (cascade = CascadeType.ALL)
-    @JsonIgnore
+    @ManyToOne
     Odontologo odontologo;
+
     LocalDate fecha;
     LocalTime hora;
 }

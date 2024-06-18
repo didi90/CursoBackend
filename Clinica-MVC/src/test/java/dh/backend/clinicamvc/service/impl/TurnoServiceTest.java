@@ -6,6 +6,7 @@ import dh.backend.clinicamvc.entity.Domicilio;
 import dh.backend.clinicamvc.entity.Odontologo;
 import dh.backend.clinicamvc.entity.Paciente;
 import dh.backend.clinicamvc.entity.Turno;
+import dh.backend.clinicamvc.exception.BadRequestException;
 import dh.backend.clinicamvc.exception.ResourceNotFoundException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -16,6 +17,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.time.LocalDate;
+import java.util.List;
+import java.util.Optional;
+
+import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest
 class TurnoServiceTest {
@@ -65,15 +71,53 @@ class TurnoServiceTest {
         turnoRequestDto.setHora("14:30:00.00");
     }
 
-   /*@Test
+   @Test
     @DisplayName("Testear que un turno fue guardado")
-    void testTurnoGuardado(){
+    void testTurnoGuardado() throws BadRequestException {
         TurnoResponseDto turnoDesdeLaBD = turnoService.registrar(turnoRequestDto);
 
         assertNotNull(turnoDesdeLaBD);
         assertNotNull(turnoDesdeLaBD.getId());
     }
-*/
+
+   @Test
+    @DisplayName("Testear busqueda turno por id")
+    void testBuscarTurnoPorId() throws BadRequestException {
+        // Primero guarda el turno
+        TurnoResponseDto turnoDesdeLaBD = turnoService.registrar(turnoRequestDto);
+        Integer id = turnoDesdeLaBD.getId();
+
+        // Luego se busca por ID
+       TurnoResponseDto turnoEncontrado = turnoService.buscarPorId(id);
+       assertNotNull(turnoEncontrado, "El turno debería estar presente en la base de datos");
+
+       assertEquals(id, turnoEncontrado.getId());
+    }
+
+    @Test
+    @DisplayName("Testear busqueda todos los turnos")
+    void testBusquedaTodosTurnos() {
+
+        List<TurnoResponseDto> turnos = turnoService.buscarTodos();
+
+        assertTrue(turnos.size()!=0);
+    }
+
+    @Test
+    @DisplayName("Testear eliminar turno por id")
+    void testEliminarTurnoPorId() throws BadRequestException, ResourceNotFoundException {
+        // Primero guarda el turno
+        TurnoResponseDto turnoDesdeLaBD = turnoService.registrar(turnoRequestDto);
+        Integer id = turnoDesdeLaBD.getId();
+
+        // Luego se busca por ID
+        TurnoResponseDto turnoAEliminar = turnoService.eliminarTurno(id);
+        assertNotNull(turnoAEliminar, "El turno debería estar presente en la base de datos");
+
+        assertEquals(id, turnoAEliminar.getId());
+    }
+
+
 
 
 
