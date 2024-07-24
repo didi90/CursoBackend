@@ -32,7 +32,7 @@ public class TurnoController {
         return ResponseEntity.ok(turnoService.buscarTodos());
     }
     @PutMapping("/{id}")
-    public ResponseEntity<String> modificarTurno(@PathVariable Integer id, @RequestBody TurnoRequestDto turno){
+    public ResponseEntity<String> modificarTurno(@PathVariable Integer id, @RequestBody TurnoRequestDto turno) throws BadRequestException {
         turnoService.actualizarTurno(id, turno);
         return ResponseEntity.ok("Turno modificado");
     }
@@ -47,7 +47,7 @@ public class TurnoController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> eliminarTurno(@PathVariable Integer id) throws ResourceNotFoundException {
+    public ResponseEntity<String> eliminarTurno(@PathVariable Integer id) throws ResourceNotFoundException, BadRequestException {
         turnoService.eliminarTurno(id);
         return ResponseEntity.ok("\"{\"mensaje\":\"turno eliminado\"}\"");
     }

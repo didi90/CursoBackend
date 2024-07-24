@@ -66,14 +66,12 @@ public class TurnoService implements ITurnoService {
     @Override
     public TurnoResponseDto buscarPorId(Integer id) {
         Optional<Turno> turnoOptional = turnoRepository.findById(id);
-        if(turnoOptional.isPresent()){
-            Turno turnoEncontrado = turnoOptional.get();
-            TurnoResponseDto turnoADevolver = mapToResponseDto(turnoEncontrado);
-            LOGGER.info("Turno encontrado");
-            return turnoADevolver;
-        }
-        return null;
+        Turno turnoEncontrado = turnoOptional.get();
+        TurnoResponseDto turnoADevolver = mapToResponseDto(turnoEncontrado);
+        LOGGER.info("Turno encontrado");
+        return turnoADevolver;
     }
+
 
     @Override
     public List<TurnoResponseDto> buscarTodos() {
@@ -88,29 +86,34 @@ public class TurnoService implements ITurnoService {
     }
 
     @Override
-    public void actualizarTurno(Integer id, TurnoRequestDto turnoRequestDto) {
+    public Turno actualizarTurno(Integer id, TurnoRequestDto turnoRequestDto) throws BadRequestException {
         Optional<Paciente> paciente = pacienteRepository.findById(turnoRequestDto.getPaciente_id());
         Optional<Odontologo> odontologo = odontologoRepository.findById(turnoRequestDto.getOdontologo_id());
         Optional<Turno> turno = turnoRepository.findById(id);
         Turno turnoAModificar = new Turno();
-        if(paciente.isPresent() && odontologo.isPresent() && turno.isPresent()){
+        if(paciente.isEmpty() && odontologo.isEmpty() && turno.isEmpty()){
+            throw new BadRequestException("{\"mensaje\":\"No se pudo actualizar el turno\"}");
+        } else{
             turnoAModificar.setId(id);
             turnoAModificar.setOdontologo(odontologo.get());
             turnoAModificar.setPaciente(paciente.get());
             turnoAModificar.setFecha(LocalDate.parse(turnoRequestDto.getFecha()));
-            LOGGER.info("Turno asignado :" + turnoAModificar);
+            turnoAModificar.setHora(LocalTime.parse(turnoRequestDto.getHora()));
+            LOGGER.info("Turno modificado :" + turnoAModificar);
             turnoRepository.save(turnoAModificar);
+            return turnoAModificar;
         }
     }
 
     @Override
-    public TurnoResponseDto eliminarTurno(Integer id) throws ResourceNotFoundException {
+    public TurnoResponseDto eliminarTurno(Integer id) throws ResourceNotFoundException, BadRequestException {
         TurnoResponseDto turnoResponseDto = buscarPorId(id);
         if(turnoResponseDto!= null){
             LOGGER.info("Turno eliminado");
             turnoRepository.deleteById(id);
+        } else {
+            throw new ResourceNotFoundException("\"{\"mensaje\":\"turno no encontrado\"}\"");
         }
-        else throw new ResourceNotFoundException("\"{\"mensaje\":\"turno no encontrado\"}\"");
         return turnoResponseDto;
     }
 
@@ -123,7 +126,6 @@ public class TurnoService implements ITurnoService {
             turnoAuxiliar = mapToResponseDto(turno);
             ListadoARetornar.add(turnoAuxiliar);
         }
-
         return ListadoARetornar;
     }
 

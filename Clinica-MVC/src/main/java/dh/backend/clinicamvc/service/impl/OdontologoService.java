@@ -1,5 +1,6 @@
 package dh.backend.clinicamvc.service.impl;
 import dh.backend.clinicamvc.entity.Odontologo;
+import dh.backend.clinicamvc.exception.BadRequestException;
 import dh.backend.clinicamvc.exception.ResourceNotFoundException;
 import dh.backend.clinicamvc.repository.IOdontologoRepository;
 import dh.backend.clinicamvc.service.IOdontologoService;
@@ -19,9 +20,14 @@ public class OdontologoService implements IOdontologoService {
         this.odontologoRepository = odontologoRepository;
     }
 
-    public Odontologo agregarOdontologo(Odontologo odontologo){
-        LOGGER.info("Odontologo Creado: " + "Id: " + odontologo.getId()+ " Nombre: "+odontologo.getNombre() + " Apellido " + odontologo.getApellido());
-        return odontologoRepository.save(odontologo);
+    public Odontologo agregarOdontologo(Odontologo odontologo) throws BadRequestException {
+        if(odontologo.getNombre().isEmpty() && odontologo.getApellido().isEmpty() && odontologo.getNroMatricula().isEmpty()){
+            throw new BadRequestException("{\"mensaje\":\"odontologo no se pudo crear\"}");
+        } else{
+            LOGGER.info("Odontologo Creado: " + odontologo.getNombre() + " " + odontologo.getApellido());
+            return odontologoRepository.save(odontologo);
+        }
+
 
     }
 
@@ -30,6 +36,7 @@ public class OdontologoService implements IOdontologoService {
         return odontologoRepository.findById(id);
     }
     public List<Odontologo> buscarTodosOdontologos(){
+        LOGGER.info("Lista de todos los odontólogos");
         return odontologoRepository.findAll();
     }
 
@@ -61,7 +68,7 @@ public class OdontologoService implements IOdontologoService {
 
    @Override
     public Optional<Odontologo> eliminarOdontologo(Integer id) throws ResourceNotFoundException {
-        Optional<Odontologo> odontologoOptional = buscarUnOdontologo(id);
+        Optional<Odontologo> odontologoOptional = odontologoRepository.findById(id);
         if(odontologoOptional.isPresent()) {
             LOGGER.info("Odontologo Eliminado");
             odontologoRepository.deleteById(id);

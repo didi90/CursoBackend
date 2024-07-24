@@ -15,7 +15,7 @@ function fetchOdontologos() {
           <td>${odontologo.apellido}</td>
           <td>${odontologo.nroMatricula}</td>
           <td>
-            <button class="eliminar-btn" data-id="${odontologo.id}">Eliminar</button>
+          <button class="eliminar-btn" data-id="${odontologo.id}">Eliminar</button>
           </td>
           <td>
             <div id="editForm-${odontologo.id}" style="display: none;">
@@ -35,7 +35,6 @@ function fetchOdontologos() {
 
 document.addEventListener('DOMContentLoaded', function() {
   fetchOdontologos();
-
   document.addEventListener('click', function(event) {
     if (event.target.classList.contains('eliminar-btn')) {
       const odontologoId = event.target.getAttribute('data-id');

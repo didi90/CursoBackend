@@ -2,6 +2,7 @@ package dh.backend.clinicamvc.service;
 
 import dh.backend.clinicamvc.Dto.request.TurnoRequestDto;
 import dh.backend.clinicamvc.Dto.response.TurnoResponseDto;
+import dh.backend.clinicamvc.entity.Turno;
 import dh.backend.clinicamvc.exception.BadRequestException;
 import dh.backend.clinicamvc.exception.ResourceNotFoundException;
 
@@ -15,8 +16,8 @@ public interface ITurnoService {
     TurnoResponseDto buscarPorId(Integer id);
 
     List<TurnoResponseDto> buscarTodos();
-    void actualizarTurno(Integer id, TurnoRequestDto turnoRequestDto);
-    TurnoResponseDto eliminarTurno(Integer id) throws ResourceNotFoundException;
+    Turno actualizarTurno(Integer id, TurnoRequestDto turnoRequestDto)throws BadRequestException;
+    TurnoResponseDto eliminarTurno(Integer id) throws ResourceNotFoundException, BadRequestException;
 
     //HQL
     List<TurnoResponseDto> buscarTurnoEntreFechas(LocalDate starDate,LocalDate endDate);

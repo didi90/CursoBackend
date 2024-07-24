@@ -11,7 +11,6 @@ import java.time.LocalTime;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 @Entity
 @Table(name = "turnos")
 
@@ -25,7 +24,6 @@ public class Turno {
     Paciente paciente;
     @ManyToOne
     Odontologo odontologo;
-
     LocalDate fecha;
     LocalTime hora;
 }

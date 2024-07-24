@@ -72,3 +72,59 @@ function updateOdontologo(id) {
 }
 
 
+/*
+const form = document.getElementByName("Modificar");
+
+form.addEventListener("click", function (event) {
+  event.preventDefault();
+
+  const nombre = document.getElementById("nombre2").value;
+  const apellido = document.getElementById("apellido2").value;
+  const matricula = document.getElementById("matricula2").value;
+
+  // llamando al endpoint de agregar
+
+  fetch(`/odontologo`, {
+  .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        // Limpiar el contenido actual de la tabla
+        tableBody.innerHTML = "";
+
+        // Insertar los datos en la tabla
+        data.forEach((odontologo, index) => {
+          const row = document.createElement("odontologoModificar");
+
+          row.innerHTML = `
+                  <td>${odontologo.id}</td>
+                  <td>${odontologo.nombre}</td>
+                  <td>${odontologo.apellido}</td>
+                  <td>${odontologo.nroMatricula}</td>
+                  <td>
+                  <button class="btn btn-primary btn-sm" onclick="editOdontologo(${odontologo.id}, '${odontologo.nombre}', '${odontologo.apellido}', '${odontologo.nroMatricula}')">Confirmar</button>
+                  </td>
+                  `;
+
+          tableBody.appendChild(row);
+        });
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ nombre, apellido, nroMatricula: matricula }),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      alert("Odontólogo modificado con éxito");
+      form.reset(); // Resetear el formulario
+    })
+    .catch((error) => {
+      console.error("Error agregando odontólogo:", error);
+    });
+});
+
+}
+
+fetchOdontologos();
+*/

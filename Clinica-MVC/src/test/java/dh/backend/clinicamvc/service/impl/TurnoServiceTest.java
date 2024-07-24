@@ -40,7 +40,7 @@ class TurnoServiceTest {
     private TurnoRequestDto turnoRequestDto;
 
     @BeforeEach
-    void setUp1(){
+    void setUp1() throws BadRequestException {
         odontologo = new Odontologo();
         odontologo.setNombre("Lorena");
         odontologo.setApellido("Cosme");
@@ -71,7 +71,7 @@ class TurnoServiceTest {
         turnoRequestDto.setHora("14:30:00.00");
     }
 
-   @Test
+    @Test
     @DisplayName("Testear que un turno fue guardado")
     void testTurnoGuardado() throws BadRequestException {
         TurnoResponseDto turnoDesdeLaBD = turnoService.registrar(turnoRequestDto);
@@ -80,7 +80,7 @@ class TurnoServiceTest {
         assertNotNull(turnoDesdeLaBD.getId());
     }
 
-   @Test
+    @Test
     @DisplayName("Testear busqueda turno por id")
     void testBuscarTurnoPorId() throws BadRequestException {
         // Primero guarda el turno
@@ -88,15 +88,15 @@ class TurnoServiceTest {
         Integer id = turnoDesdeLaBD.getId();
 
         // Luego se busca por ID
-       TurnoResponseDto turnoEncontrado = turnoService.buscarPorId(id);
-       assertNotNull(turnoEncontrado, "El turno debería estar presente en la base de datos");
+        TurnoResponseDto turnoEncontrado = turnoService.buscarPorId(id);
+        assertNotNull(turnoEncontrado, "El turno debería estar presente en la base de datos");
 
-       assertEquals(id, turnoEncontrado.getId());
+        assertEquals(id, turnoEncontrado.getId());
     }
 
     @Test
     @DisplayName("Testear busqueda todos los turnos")
-    void testBusquedaTodosTurnos() {
+    void testBusquedaTodosTurnos() throws BadRequestException {
 
         List<TurnoResponseDto> turnos = turnoService.buscarTodos();
 
@@ -116,9 +116,5 @@ class TurnoServiceTest {
 
         assertEquals(id, turnoAEliminar.getId());
     }
-
-
-
-
 
 }

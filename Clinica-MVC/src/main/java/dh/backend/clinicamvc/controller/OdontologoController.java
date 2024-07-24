@@ -1,6 +1,7 @@
 package dh.backend.clinicamvc.controller;
 
 import dh.backend.clinicamvc.entity.Odontologo;
+import dh.backend.clinicamvc.exception.BadRequestException;
 import dh.backend.clinicamvc.exception.ResourceNotFoundException;
 import dh.backend.clinicamvc.service.impl.OdontologoService;
 import org.springframework.http.HttpStatus;
@@ -19,12 +20,13 @@ public class OdontologoController {
         this.odontologoService = odontologoService;
     }
     @PostMapping
-    public ResponseEntity<Odontologo> registrarOdontologo(@RequestBody Odontologo odontologo){
+    public ResponseEntity<Odontologo> registrarOdontologo(@RequestBody Odontologo odontologo) throws BadRequestException {
         return ResponseEntity.status(HttpStatus.CREATED).body(odontologoService.agregarOdontologo(odontologo));
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Odontologo>  buscarOdontologoPorId(@PathVariable Integer id) {
+        //Se dejó la lógica en este apartado, debido a que no se implementó la excepción
         Optional<Odontologo> odontologo = odontologoService.buscarUnOdontologo(id);
         if (odontologo.isPresent()){
             Odontologo odontologoARetornar = odontologo.get();
@@ -36,6 +38,7 @@ public class OdontologoController {
 
     @PutMapping
     public ResponseEntity<String> modificarOdontologo(@RequestBody Odontologo odontologo){
+        //Se dejó la lógica en este apartado, debido a que no se implementó la excepción
         Optional<Odontologo> odontologoOptional = odontologoService.buscarUnOdontologo(odontologo.getId());
         if(odontologoOptional.isPresent()){
             odontologoService.modificarOdontologo(odontologo);
@@ -47,6 +50,7 @@ public class OdontologoController {
 
     @PutMapping("/{id}")
     public ResponseEntity<?> modificarOdontologoPorId(@PathVariable Integer id, @RequestBody Odontologo odontologoDto) {
+        //Se dejó la lógica en este apartado, debido a que no se implementó la excepción
         try {
             odontologoService.modificarOdontologoId(id, odontologoDto.getNombre(), odontologoDto.getApellido(), odontologoDto.getNroMatricula());
             return ResponseEntity.ok("{\"message\": \"odontologo actulizado con exito\"}");
@@ -70,6 +74,7 @@ public class OdontologoController {
 
     @GetMapping("/apellido/{apellido}")
     public ResponseEntity<List<Odontologo>> buscarPorApellido(@PathVariable String apellido){
+        //Se dejó la lógica en este apartado, debido a que no se implementó la excepción
         List<Odontologo> listaOndontologos = odontologoService.buscarPorApellido(apellido);
         if(listaOndontologos.size()>0){
             return ResponseEntity.ok(listaOndontologos);
